@@ -7,34 +7,36 @@ services:
         uid: 1000
       context: ./
       dockerfile: Dockerfile
-    image: travellist
-    container_name: travellist-app
+    image: learn-online
+    container_name: learn-online-app
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
       - ./:/var/www
     networks:
-      - travellist
+      - learn-online
 
   db:
     image: mysql:5.7
-    container_name: travellist-db
+    container_name: learn-online-db
     restart: unless-stopped
+    ports:
+      - "3306:3306"
     environment:
-      MYSQL_DATABASE: "learn-online"
-      MYSQL_ROOT_PASSWORD: ""
-      MYSQL_PASSWORD: ""
-      MYSQL_USER: "root"
+      MYSQL_DATABASE: learn-online
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: password
+      MYSQL_USER: username
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.ddocker
     networks:
-      - travellist
+      - learn-online
 
   nginx:
     image: nginx:alpine
-    container_name: travellist-nginx
+    container_name: learn-online-nginx
     restart: unless-stopped
     ports:
       - 8000:80
@@ -42,8 +44,8 @@ services:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
-      - travellist
+      - learn-online
 
 networks:
-  travellist:
+  learn-online:
     driver: bridge
