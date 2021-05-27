@@ -1,6 +1,5 @@
 var staticCacheName = "pwa-v" + new Date().getTime();
 var filesToCache = [
-    '/offline',
     '/css/app.css',
     '/js/app.js',
     '/images/icons/icon-72x72.png',
@@ -11,6 +10,12 @@ var filesToCache = [
     '/images/icons/icon-192x192.png',
     '/images/icons/icon-384x384.png',
     '/images/icons/icon-512x512.png',
+    'https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap',
+    'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js',
+    'assets/css/inc/owl-carousel/owl.carousel.min.css',
+    'assets/css/inc/owl-carousel/owl.theme.default.css',
+    'assets/css/inc/bootstrap/bootstrap.min.css',
+    'assets/css/style.css'
 ];
 
 // Cache on install

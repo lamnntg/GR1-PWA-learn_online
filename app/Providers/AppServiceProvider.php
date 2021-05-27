@@ -13,7 +13,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(
+            \App\Services\TabServiceInterface::class,
+            \App\Services\TabService::class,
+        );
+        $this->app->singleton(
+            \App\Services\ExamServiceInterface::class,
+            \App\Services\ExamService::class,
+        );
     }
 
     /**

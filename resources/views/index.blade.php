@@ -4,7 +4,7 @@
     <title>OneSchool &mdash; For The Future</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    @laravelPWA
+
 
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="{{asset("web/fonts/icomoon/style.css")}}">
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{asset("web/css/aos.css")}}">
 
     <link rel="stylesheet" href="{{asset("web/css/style.css")}}">
-
+    @laravelPWA
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
@@ -75,24 +75,8 @@
               <div class="row align-items-center">
                 <div class="col-lg-6 mb-4">
                   <h1  data-aos="fade-up" data-aos-delay="100">Learn From The Expert</h1>
-                  <p data-aos="fade-up" data-aos-delay="300"><a href="" class="btn btn-primary py-3 px-5 btn-pill">Administration Page</a></p>
+                  <p data-aos="fade-up" data-aos-delay="300"><a href="{{ route('login') }}" class="btn btn-primary py-3 px-5 btn-pill">Tham gia ngay</a></p>
                   <p class="mb-4"  data-aos="fade-up" data-aos-delay="200"></p>
-                </div>
-
-                <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
-                  <form action="" method="GET" class="form-box">
-
-                    <h3 class="h4 text-black mb-4">Sign In For Candidate</h3>
-                    <div class="form-group">
-                      <input type="text" name="user_name" class="form-control" placeholder="User Name">
-                    </div>
-                    <div class="form-group">
-                      <input type="password" name="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <input type="submit" class="btn btn-primary btn-pill" value="Sign in">
-                    </div>
-                  </form>
                 </div>
               </div>
             </div>
