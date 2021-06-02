@@ -47,166 +47,37 @@
 
     <!-- App Capsule -->
     <div id="appCapsule">
+        <div id="fb-root"></div>
 
-        <div class="message-divider">
-            Friday, Sep 20, 10:40 AM
+        <!-- Your Plugin chat code -->
+        <div id="fb-customer-chat" class="fb-customerchat">
         </div>
 
-        <div class="message-item">
-            <img src="assets/img/sample/avatar/avatar1.jpg" alt="avatar" class="avatar">
-            <div class="content">
-                <div class="title">John</div>
-                <div class="bubble">
-                    Hi everyone, how are you?
-                </div>
-                <div class="footer">8:40 AM</div>
-            </div>
-        </div>
+        <script>
+            var chatbox = document.getElementById('fb-customer-chat');
+            chatbox.setAttribute("page_id", "102138695427729");
+            chatbox.setAttribute("attribution", "biz_inbox");
+            window.fbAsyncInit = function() {
+                FB.init({
+                xfbml            : true,
+                version          : 'v10.0'
+                });
+            };
 
-        <div class="message-item">
-            <img src="assets/img/sample/avatar/avatar2.jpg" alt="avatar" class="avatar">
-            <div class="content">
-                <div class="title">Marry</div>
-                <div class="bubble">
-                    I'm fine, how are you today john, do you feel good?
-                </div>
-                <div class="footer">10:40 AM</div>
-            </div>
-        </div>
-
-        <div class="message-item user">
-            <div class="content">
-                <div class="bubble">
-                    Would you please repost the photo you sent yesterday?
-                </div>
-                <div class="footer">10:40 AM</div>
-            </div>
-        </div>
-
-        <div class="message-divider">
-            Friday, Sep 20, 10:40 AM
-        </div>
-
-        <div class="message-item">
-            <img src="assets/img/sample/avatar/avatar2.jpg" alt="avatar" class="avatar">
-            <div class="content">
-                <div class="title">Marry</div>
-                <div class="bubble">
-                    <img src="assets/img/sample/photo/1.jpg" alt="photo" class="imaged w160">
-                </div>
-                <div class="footer">10:40 AM</div>
-            </div>
-        </div>
-
-        <div class="message-item">
-            <img src="assets/img/sample/avatar/avatar4.jpg" alt="avatar" class="avatar">
-            <div class="content">
-                <div class="title">Katie</div>
-                <div class="bubble">
-                    Nice photo !
-                </div>
-                <div class="footer">10:40 AM</div>
-            </div>
-        </div>
-
-        <div class="message-item">
-            <img src="assets/img/sample/avatar/avatar2.jpg" alt="avatar" class="avatar">
-            <div class="content">
-                <div class="title">Marry</div>
-                <div class="bubble">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae nisl et nibh iaculis
-                    sagittis. In hac habitasse platea dictumst. Sed eu massa lacinia, interdum ex et, sollicitudin elit.
-                </div>
-                <div class="footer">10:40 AM</div>
-            </div>
-        </div>
-
-        <div class="message-item user">
-            <div class="content">
-                <div class="bubble">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae nisl et nibh iaculis
-                    sagittis. In hac habitasse platea dictumst. Sed eu massa lacinia, interdum ex et, sollicitudin elit.
-                </div>
-                <div class="footer">10:40 AM</div>
-            </div>
-        </div>
-    </div>
-    <!-- * App Capsule -->
-
-    <!-- Share Action Sheet -->
-    <div class="modal fade action-sheet inset" id="addActionSheet" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Share</h5>
-                </div>
-                <div class="modal-body">
-                    <ul class="action-button-list">
-                        <li>
-                            <a href="#" class="btn btn-list" data-dismiss="modal">
-                                <span>
-                                    <ion-icon name="camera-outline"></ion-icon>
-                                    Take a photo
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-list" data-dismiss="modal">
-                                <span>
-                                    <ion-icon name="videocam-outline"></ion-icon>
-                                    Video
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-list" data-dismiss="modal">
-                                <span>
-                                    <ion-icon name="image-outline"></ion-icon>
-                                    Upload from Gallery
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-list" data-dismiss="modal">
-                                <span>
-                                    <ion-icon name="document-outline"></ion-icon>
-                                    Documents
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-list" data-dismiss="modal">
-                                <span>
-                                    <ion-icon name="musical-notes-outline"></ion-icon>
-                                    Sound file
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
     </div>
     <!-- * Share Action Sheet -->
 
     <!-- chat footer -->
     <div class="chatFooter">
-        <form>
-            <a href="javascript:;" class="btn btn-icon btn-secondary rounded" data-toggle="modal" data-target="#addActionSheet">
-                <ion-icon name="add"></ion-icon>
-            </a>
-            <div class="form-group boxed">
-                <div class="input-wrapper">
-                    <input type="text" class="form-control" placeholder="Type a message...">
-                    <i class="clear-input">
-                        <ion-icon name="close-circle"></ion-icon>
-                    </i>
-                </div>
-            </div>
-            <button type="button" class="btn btn-icon btn-primary rounded">
-                <ion-icon name="send"></ion-icon>
-            </button>
-        </form>
+
     </div>
     <!-- * chat footer -->
 
