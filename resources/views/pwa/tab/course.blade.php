@@ -20,7 +20,7 @@
                 <p class="card-text">
                     Khóa Học : {{  $course->name }}
                 </p>
-                <a href="app-components.html" class="btn btn-primary">
+                <a href="{{ route('course.detail', ['courseId' => $course->id]) }}" class="btn btn-primary">
                     <ion-icon name="cube-outline"></ion-icon>
                     Đăng kí ngay
                 </a>

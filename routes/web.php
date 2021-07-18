@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TabController;
@@ -36,6 +37,9 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/config/create', [ExamController::class, 'examConfigCreate'])->name('exam.config.create');
     });
 
+    Route::prefix('/course')->group(function () {
+        Route::get('/{courseId}/detail', [CourseController::class, 'courseDetail'])->name('course.detail');
+    });
     Route::prefix('/subject')->group(function () {
         Route::get('{subjectId}/lessons', [SubjectController::class, 'lessonList'])->name('subject.lesson.list');
     });

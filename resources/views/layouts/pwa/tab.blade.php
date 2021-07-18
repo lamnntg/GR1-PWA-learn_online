@@ -168,7 +168,7 @@
                     <!-- profile box -->
                     <div class="profileBox">
                         <div class="image-wrapper">
-                            <img src="{{asset("assets/img/sample/avatar/avatar1.jpg")}}" alt="image" class="imaged rounded">
+                            <img src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/192656313_1229849174141206_4845823471560590426_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=uKUv_rFZlvAAX-GTNNF&_nc_ht=scontent-hkt1-1.xx&oh=9778ab2b023c6f94e9faf6aa6f38793c&oe=60F97410" alt="image" class="imaged rounded">
                         </div>
                         <div class="in">
                             <strong>{{ Auth::user()->name }}</strong>
@@ -185,7 +185,7 @@
 
                     <ul class="listview flush transparent no-line image-listview mt-2">
                         <li>
-                            <a href="index.html" class="item">
+                            <a href="{{ route('home') }}" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="home-outline"></ion-icon>
                                 </div>
@@ -195,7 +195,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="app-components.html" class="item">
+                            <a href="{{ route('course') }}" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="cube-outline"></ion-icon>
                                 </div>
@@ -215,7 +215,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="page-chat.html" class="item">
+                            <a href="{{ route('chat') }}" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
                                 </div>
@@ -242,7 +242,7 @@
                         </li>
                     </ul>
 
-                    <div class="listview-title mt-2 mb-1">
+                    {{-- <div class="listview-title mt-2 mb-1">
                         <span>Friends</span>
                     </div>
                     <ul class="listview image-listview flush transparent no-line">
@@ -254,7 +254,7 @@
                                 </div>
                             </a>
                         </li>
-                    </ul>
+                    </ul> --}}
 
                 </div>
 

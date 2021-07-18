@@ -24,7 +24,7 @@ class CourseSeeder extends Seeder
                 'name' => 'Toán Lớp 1',
                 'description' => 'Cô Nguyễn Thị Ngô',
                 'img_url' => 'https://i.ytimg.com/vi/MKefZWtFHkE/maxresdefault.jpg',
-                'video_url' => 'https://www.youtube.com/watch?v=DTYBwqd110c',
+                'video_url' => 'https://www.youtube.com/embed/1NBgG3cNRRI',
             ],
 
             [
@@ -32,7 +32,7 @@ class CourseSeeder extends Seeder
                 'name' => 'Toán Lớp 2',
                 'description' => 'Cô Nguyễn Thị Bảnh',
                 'img_url' => 'https://i.vdoc.vn/data/image/2020/12/03/tron-bo-bai-tap-toan-co-ban-lop-1.jpg',
-                'video_url' => 'https://www.youtube.com/watch?v=DTYBwqd110c',
+                'video_url' => 'https://www.youtube.com/embed/shMGiXNAtJA',
             ],
 
             [
@@ -40,7 +40,7 @@ class CourseSeeder extends Seeder
                 'name' => 'Toán Lớp 3',
                 'description' => 'Cô Nguyễn Thị Khá',
                 'img_url' => 'https://i.ytimg.com/vi/MKefZWtFHkE/maxresdefault.jpg',
-                'video_url' => 'https://www.youtube.com/watch?v=DTYBwqd110c',
+                'video_url' => 'https://www.youtube.com/embed/G8oIbrzG8RM',
             ],
 
             [
@@ -48,7 +48,7 @@ class CourseSeeder extends Seeder
                 'name' => 'Tiếng Việt Lớp 1',
                 'description' => 'Cô Nguyễn Thị Ngô',
                 'img_url' => 'https://i.ytimg.com/vi/3F_S8KIlIz4/maxresdefault.jpg',
-                'video_url' => 'https://www.youtube.com/watch?v=DTYBwqd110c',
+                'video_url' => 'https://www.youtube.com/embed/dierYq7YEqM',
             ],
 
             [
@@ -56,7 +56,7 @@ class CourseSeeder extends Seeder
                 'name' => 'Tiếng Việt Lớp 2',
                 'description' => 'Cô Nguyễn Thị Bảnh',
                 'img_url' => 'https://i.ytimg.com/vi/3F_S8KIlIz4/maxresdefault.jpg',
-                'video_url' => 'https://www.youtube.com/watch?v=DTYBwqd110c',
+                'video_url' => 'https://www.youtube.com/embed/nmgyFtq-MNk',
             ],
 
             [
@@ -64,7 +64,7 @@ class CourseSeeder extends Seeder
                 'name' => 'Tiếng Việt Lớp 3',
                 'description' => 'Cô Nguyễn Thị Khá',
                 'img_url' => 'https://i.ytimg.com/vi/3F_S8KIlIz4/maxresdefault.jpg',
-                'video_url' => 'https://www.youtube.com/watch?v=DTYBwqd110c',
+                'video_url' => 'https://www.youtube.com/embed/p-9UY3J2FSY',
             ],
         ];
         DB::table('courses')->insert($d);

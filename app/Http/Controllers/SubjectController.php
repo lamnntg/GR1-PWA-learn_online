@@ -8,6 +8,6 @@ class SubjectController extends Controller
 {
     public function lessonList($subjectId)
     {
-        return view('pwa.page.lesson-list');
+        return view('pwa.page.lesson-detail');
     }
 }

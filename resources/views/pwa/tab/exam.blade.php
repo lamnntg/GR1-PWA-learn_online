@@ -91,7 +91,7 @@
                                 <div class="input-wrapper">
                                     <label class="label" for="name">Tên cấu hình</label>
                                     <input type="text" class="form-control" id="name"
-                                        placeholder="Tên cấu hình" name="name">
+                                        placeholder="Tên cấu hình" name="name" required>
                                     <i class="clear-input">
                                         <ion-icon name="close-circle"></ion-icon>
                                     </i>
@@ -121,7 +121,7 @@
                                 <div class="input-wrapper">
                                     <label class="label" for="quota">Số lượng câu hỏi</label>
                                     <input type="number" class="form-control" id="quota"
-                                        placeholder="Số lượng câu hỏi" name="quota">
+                                        placeholder="Số lượng câu hỏi" name="quota" required>
                                     <i class="clear-input">
                                         <ion-icon name="close-circle"></ion-icon>
                                     </i>

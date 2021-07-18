@@ -47,6 +47,11 @@ class ExamController extends Controller
         $exam = $this->examService->createTestOnline($request->exam_config_id, Auth::user()->id, $request->subject_id);
         $examConfig = ExamConfig::findOrFail($request->exam_config_id);
         $questionList = $this->examService->randomQuestions($examConfig);
+
+        if ($questionList->count() == 0) {
+            return redirect()->back()->with('warning', 'No questions available');
+        }
+
         $this->examService->storeQuestionToTestOnline($exam->id, $questionList);
 
         return redirect()->route('exam', ['id' =>  $request->subject_id]);
