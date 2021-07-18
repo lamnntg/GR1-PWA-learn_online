@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TabController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,19 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::get('/profile', [UserController::class, 'index'])->name('profile.index');
+
+    Route::prefix('/notification')->group(function () {
+        Route::get('/', [NotificationController::class, 'index'])->name('notification.list');
+
+        // Route::get('getPusher', function (){
+        //    return view('form_pusher');
+        // });
+
+        // Route::get('/pusher', function(Illuminate\Http\Request $request) {
+        //     event(new App\Events\HelloPusherEvent($request));
+        //     return redirect('getPusher');
+        // });
+    });
 });
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -174,7 +174,7 @@
                             <strong>{{ Auth::user()->name }}</strong>
                             <div class="text-muted">
                                 <ion-icon name="location"></ion-icon>
-                                Ha Noi
+                                Hà Nội
                             </div>
                         </div>
                         <a href="javascript:;" class="close-sidebar-button" data-dismiss="modal">
@@ -185,6 +185,15 @@
 
                     <ul class="listview flush transparent no-line image-listview mt-2">
                         <li>
+                            <a href="{{ route('notification.list') }}" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="notifications-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    Notification
+                                </div>
+                            </a>
+
                             <a href="{{ route('home') }}" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="home-outline"></ion-icon>
@@ -255,9 +264,11 @@
                             </a>
                         </li>
                     </ul> --}}
-
+                    <button type="button" class="btn btn-secondary mr-05 mb-1"
+                    onclick="notification('notification-6' , 3000)">Auto Close (3s)</button>
                 </div>
 
+                <!-- * android style -->
                 <!-- sidebar buttons -->
                 <div class="sidebar-buttons">
                     <a href="{{ route('profile.index') }}" class="button">
@@ -284,6 +295,28 @@
     </div>
     <!-- * App Sidebar -->
 
+    <!-- android style -->
+    <div id="notification-6" class="notification-box">
+        <div class="notification-dialog android-style">
+            <div class="notification-header">
+                <div class="in">
+                    <strong>Notification</strong>
+                    <span>just now</span>
+                </div>
+                <a href="#" class="close-button">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <div class="notification-content">
+                <div class="in">
+                    <h3 class="subtitle">Auto close in 3 seconds.</h3>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Jquery -->
@@ -299,6 +332,7 @@
     <script src="{{asset("assets/js/plugins/jquery-circle-progress/circle-progress.min.js")}}"></script>
     <!-- Base Js File -->
     <script src="{{asset("assets/js/base.js")}}"></script>
+    @stack('scripts')
 
 </body>
 
