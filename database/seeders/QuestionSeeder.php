@@ -13,7 +13,7 @@ class QuestionSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Question::factory(200)->create()->each(function( $question) {
+        \App\Models\Question::factory(2000)->create()->each(function( $question) {
             $anwser = \App\Models\Answer::factory(4)->create([
                 'question_id' => $question->id,
             ]);
