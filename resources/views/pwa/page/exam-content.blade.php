@@ -1,6 +1,6 @@
 @extends('layouts.pwa.page')
 @section('pageTitle')
-    Exam Content
+    Exam Content - <span id="clock">30:00</span>
 @endsection
 @section('content')
 
@@ -29,3 +29,27 @@
 </div>
 
 @endsection
+@push('scripts')
+<script>
+    let current = new Date();
+    const dueTime = new Date(current.getTime() + 30*60000);
+
+var showCurrentTime = function()
+{
+    var clock = document.getElementById('clock');
+
+    var currentTime = new Date();
+    var timeDown =new Date(Date.parse(dueTime) - Date.parse(currentTime));
+    var minutes = timeDown.getMinutes();
+    var seconds = timeDown.getSeconds();
+    var clockTime =  minutes + ':' + seconds;
+    clock.innerText = clockTime;
+};
+
+showCurrentTime();
+var oneSecond = 1000;
+setInterval( showCurrentTime, oneSecond);
+
+</script>
+
+@endpush

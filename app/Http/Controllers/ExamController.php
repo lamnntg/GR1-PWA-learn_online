@@ -7,6 +7,7 @@ use App\Models\ExamConfig;
 use App\Models\QuestionCategory;
 use App\Models\QuestionDegree;
 use App\Services\ExamServiceInterface;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
@@ -59,8 +60,12 @@ class ExamController extends Controller
 
     public function examTake($examId)
     {
+        $due = now()->addMinute(30);
+        date_format($due, 'Y-m-d H:i:s');
+
         $exam = Exam::findOrFail($examId);
-        return view('pwa.page.exam-content', compact('exam'));
+
+        return view('pwa.page.exam-content', compact('exam', 'due'));
     }
 
     public function examPost(Request $request)

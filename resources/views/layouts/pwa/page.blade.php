@@ -261,7 +261,7 @@
                             </a>
                         </li>
                     </ul> --}}
-                    <button type="button" class="btn btn-secondary mr-05 mb-1"
+                    <button type="button" id="notification-show" class="btn btn-secondary mr-05 mb-1"
                     onclick="notification('notification-6' , 3000)">Auto Close (3s)</button>
                 </div>
 
@@ -296,7 +296,7 @@
         <div class="notification-dialog android-style">
             <div class="notification-header">
                 <div class="in">
-                    <strong>Notification</strong>
+                    <strong>Thông báo</strong>
                     <span>just now</span>
                 </div>
                 <a href="#" class="close-button">
@@ -305,9 +305,9 @@
             </div>
             <div class="notification-content">
                 <div class="in">
-                    <h3 class="subtitle">Auto close in 3 seconds.</h3>
-                    <div class="text">
-                        Lorem ipsum dolor sit amet.
+                    <h3 class="subtitle" id="notification-title">Auto close in 3 seconds.</h3>
+                    <div class="text" id="notification-content">
+                        Bạn nhận được 1 thông báo mới từ <strong>Nguyễn Lâm</strong>
                     </div>
                 </div>
             </div>
@@ -328,6 +328,21 @@
     <script src="{{asset("assets/js/plugins/jquery-circle-progress/circle-progress.min.js")}}"></script>
     <!-- Base Js File -->
     <script src="{{asset("assets/js/base.js")}}"></script>
+    <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+    <script>
+
+     var pusher = new Pusher('{{env("MIX_PUSHER_APP_KEY")}}', {
+        cluster: '{{env("PUSHER_APP_CLUSTER")}}',
+        encrypted: true
+      });
+
+      var channel = pusher.subscribe('notify-channel');
+      channel.bind('App\\Events\\NotificationPusherEvent', function(data) {
+        $( "#notification-title" ).text( data.title );
+        $( "#notification-content" ).text( data.content );
+        notification('notification-6' , 3000);
+      });
+    </script>
     @stack('scripts')
 </body>
 

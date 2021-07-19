@@ -50,14 +50,12 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('/notification')->group(function () {
         Route::get('/', [NotificationController::class, 'index'])->name('notification.list');
 
-        // Route::get('getPusher', function (){
-        //    return view('form_pusher');
-        // });
+        Route::get('/getPusher', function (){
+           return view('pwa.page.notification-pusher');
+        });
 
-        // Route::get('/pusher', function(Illuminate\Http\Request $request) {
-        //     event(new App\Events\HelloPusherEvent($request));
-        //     return redirect('getPusher');
-        // });
+        Route::get('/push', [NotificationController::class, 'notification'])->name('notification.push');
+        Route::get('/create', [NotificationController::class, 'create']);
     });
 });
 Route::get('/dashboard', function () {
