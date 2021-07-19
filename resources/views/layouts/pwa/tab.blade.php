@@ -265,7 +265,7 @@
                         </li>
                     </ul> --}}
                     <button type="button" class="btn btn-secondary mr-05 mb-1"
-                    onclick="notification('notification-6' , 3000)">Auto Close (3s)</button>
+                    onclick="notification('notification-6' , 3000)" hidden>Auto Close (3s)</button>
                 </div>
 
                 <!-- * android style -->
